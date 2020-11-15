@@ -1,5 +1,8 @@
-main: me.specifies.MoreFishHook.MoreFishHook
-version: 1.0
+main: me.specifies.IRC.Main
+name: IRCore
+version: 1.0.0
 author: SpecifiesDev
-name: MoreFishHook
 
+depend:
+  - MoreFish
+  - PlaceholderAPI

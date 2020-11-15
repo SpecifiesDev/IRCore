@@ -1,16 +1,19 @@
-package me.specifies.MoreFishHook;
+package me.specifies.IRC.Expansions;
 
 import org.bukkit.OfflinePlayer;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.elsiff.morefish.MoreFish;
 import me.elsiff.morefish.fishing.competition.FishingCompetition;
+import me.specifies.IRC.Main;
 
-public class RegisterPlaceholders extends PlaceholderExpansion {
+public class MoreFishExpansion extends PlaceholderExpansion {
 	
 	private MoreFish hook;
-	public RegisterPlaceholders() {
-		this.hook = MoreFishHook.getInstance();
+	private Main plugin;
+	public MoreFishExpansion() {
+		this.hook = Main.getFish();
+		this.plugin = Main.getInstance();
 	}
 	
 	@Override
@@ -18,14 +21,11 @@ public class RegisterPlaceholders extends PlaceholderExpansion {
 		return true;
 	}
 	
-	/**
-	 * Upon specification we should parse the plugin.yml for these values, so if finalized we need to do so
-	 */
 	@Override
 	public String getAuthor() {
-		return "SpecifiesDev";
+		return plugin.getDescription().getAuthors().get(0);
 	}
-	
+
 	@Override
 	public String getIdentifier() {
 		return "morefish";
@@ -33,7 +33,7 @@ public class RegisterPlaceholders extends PlaceholderExpansion {
 	
 	@Override
 	public String getVersion() {
-		return "1.0";
+		return plugin.getDescription().getVersion();
 	}
 	
 	@Override
@@ -94,6 +94,8 @@ public class RegisterPlaceholders extends PlaceholderExpansion {
 		
 		
 		return null;
+		
 	}
-
+	
+	
 }
