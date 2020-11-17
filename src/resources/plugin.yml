@@ -6,3 +6,8 @@ author: SpecifiesDev
 depend:
   - MoreFish
   - PlaceholderAPI
+
+commands:
+  ircreload:
+    aliases: [ircr]
+    usage: /ircreload
